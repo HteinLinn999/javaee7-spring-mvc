@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlnns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Home</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.6/css/bootstrap.min.css} " />
+					  
+</head>
+
+<body>
+	<h1> Welcome to the Home Page--Spring MVC</h1>
+
+	<img th:src="@{/images/apple.jpeg}" alt="Image" />
+	<p th:text="${message}" />
+	<p th:text="#{home.welcome}">Welcome to our grocery store!</p>
+	
+	<form>
+		<button type="button" class="btn btn-primary"> Update</button>
+	</form>
+</body>
+
+</html>
