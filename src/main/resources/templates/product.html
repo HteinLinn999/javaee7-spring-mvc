@@ -13,21 +13,12 @@
 <body>
 
 	<section layout:fragment="content">
+		<div class="container my-5" th:each="product : ${productsWithDetails}">
 
-		<p th:text="${message}">placeholder message</p>
-				
-		<img th:src="@{/images/apple.jpeg}" alt="Image" />
-		<p th:text="${message}" />
-		<p th:text="#{home.welcome}">Welcome to our grocery store!</p>
+			Name : <span th:text="${product.name}" />
+			<br />
+			Price : <span th:text="${product.price}" />
 
-
-		<h1>Welcome to spring with layout2...</h1>
-		<!--<img th:src="@{/images/apple.jpeg}"/>-->
-
-		<p>In two years, it will be <span th:text="2013 + 2">1494</span>.</p>
-
-		<div th:if="${admin == true}">
-			<h1>Admin</h1>
 		</div>
 	</section>
 </body>

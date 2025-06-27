@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/fragments/layout.html}">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Home</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.6/css/bootstrap.min.css} " />
+</head>
+
+
+<body>
+	
+	<section layout:fragment="content">
+		<a href="#" th:href="@{/books/new}" class="btn btn-primary">New Book</a>
+		<h1>Books</h1>
+
+		<table class="table table-stripped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Price</th>
+					<th>Description</th>
+					<thActions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="book : ${books}">
+					<tr>
+						<td th:text="${book.id}"></td>
+						<td th:text="${book.title}"></td>
+						<td th:text="${book.author}"></td>
+						<td th:text="${book.price}"></td>
+						<td th:text="${book.description}"></td>
+						<td>
+							<a th:href="@{/books/edit/{id}(id=${book.id})}" class="btn btn-secondary">Edit</a>
+							<a th:href="@{/books/delete/{id}(id=${book.id})}" class="btn btn-danger">Delete</a>
+						</td>	
+					</tr>
+				</th:block>
+			</tbody>
+		</table>
+	</section>
+</body>
+</body>
+
+</html>
